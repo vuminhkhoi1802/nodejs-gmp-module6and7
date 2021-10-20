@@ -20,3 +20,17 @@ $ docker-compose up
 
 $ npm run start
 ```
+
+### Side Notes:
+
+Please comment out this portion of code in `server.js` file after the first run of this project without making any changes to the database schema
+
+Also in order to run the unit tests properly, this portion also needs to be commented out after the first run of the project
+
+```javascript
+db.sequelize.sync({force: true}).then(async () => {
+	logger.info('Drop and Resync Database with { force: true }');
+	initRoles();
+	await initUsers();
+});
+```
