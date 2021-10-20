@@ -86,7 +86,7 @@ const isModeratorOrAdmin = (req, res, next) => {
 	});
 };
 
-const comparePassword = (inputPassword, currentPassword) => {
+const validatePassword = (inputPassword, currentPassword) => {
 	return bcrypt.compareSync(inputPassword, currentPassword);
 };
 
@@ -99,7 +99,7 @@ const authJwt = {
 	isAdmin: isAdmin,
 	isModerator: isModerator,
 	isModeratorOrAdmin: isModeratorOrAdmin,
-	comparePassword: comparePassword,
+	validatePassword: validatePassword,
 	signToken: signToken,
 };
 

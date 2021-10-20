@@ -3,7 +3,7 @@ const Op = db.Sequelize.Op;
 const Role = db.role;
 
 const getRolesByName = async (roleName) => {
-	await Role.findAll({
+	return Role.findAll({
 		where: {
 			name: {
 				[Op.or]: roleName,

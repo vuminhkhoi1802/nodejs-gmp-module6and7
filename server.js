@@ -29,11 +29,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // Uncomment this on your first run of the project, then comment it out if not making any changes to the DB Structure
-// db.sequelize.sync({force: true}).then(async () => {
-// 	logger.info('Drop and Resync Database with { force: true }');
-// 	initRoles();
-// 	await initUsers();
-// });
+db.sequelize.sync({force: true}).then(async () => {
+	logger.info('Drop and Resync Database with { force: true }');
+	initRoles();
+	await initUsers();
+});
 
 app.use((req, res, next) => {
 	logger.info(`${req.method} ${req.originalUrl} [STARTED]`);

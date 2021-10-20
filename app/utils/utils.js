@@ -17,8 +17,14 @@ const getDurationInMilliseconds = (start) => {
 	return (diff[0] * NS_PER_SEC + diff[1]) / NS_TO_MS;
 };
 
+const validateSchema = (payload, schema) => {
+	const { error } = schema.validate(payload);
+	return !error;
+};
+
 module.exports = {
 	encryptInputString,
 	generateUUIDV4,
 	getDurationInMilliseconds,
+	validateSchema,
 };
