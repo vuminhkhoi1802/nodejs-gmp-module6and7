@@ -19,7 +19,6 @@ describe('TEST login API /api/auth/login', () => {
 			.end((err, response) => {
 				response.should.have.status(401);
 				response.should.be.a('object');
-				response.should.have.property('message');
 				done();
 			});
 	});
