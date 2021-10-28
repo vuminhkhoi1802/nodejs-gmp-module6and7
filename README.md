@@ -34,3 +34,8 @@ db.sequelize.sync({force: true}).then(async () => {
 	await initUsers();
 });
 ```
+
+### Self-suggested Improvement
+
+- I will improve the unit test portion by not letting it depending on the `server.js` file
+- Unit Tests will need to be independent 
